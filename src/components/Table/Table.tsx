@@ -1,30 +1,17 @@
 import React from 'react';
-import TBody, { IData } from './TBody/TBody';
 import THead from './THead/THead';
 import './Table.scss';
 import titles from '../../../public/data/columnsNames';
 import TRow from './TRow/TRow';
-
-interface IUsers {
-  users: IData[];
-}
+import { IUsers } from '../../models/User';
 
 const Table = ({ users }: IUsers) => {
   return (
-    <table className="table">
+    <table className='table'>
       <THead theadData={titles} />
       <tbody>
         {users.map(
-          ({
-            account,
-            created_date,
-            created_user,
-            id,
-            oguid,
-            order_type,
-            status,
-            terminal
-          }) => (
+          ({ account, created_date, created_user, id, oguid, order_type, status, terminal }) => (
             <TRow
               key={id}
               id={id}
@@ -39,7 +26,6 @@ const Table = ({ users }: IUsers) => {
           )
         )}
       </tbody>
-      <TBody tbodyData={users} />
     </table>
   );
 };
