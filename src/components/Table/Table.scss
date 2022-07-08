@@ -1,0 +1,21 @@
+.table {
+  text-align: center;
+  font-size: 17px;
+  &__head {
+    display: grid;
+    grid-template-columns: 20% 30% 40% 10%;
+    width: 95vw;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 20% 30% 40% 10%;
+    padding: 10px 0px;
+  }
+}
+
+td,
+th {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
