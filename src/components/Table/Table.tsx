@@ -1,12 +1,15 @@
 import React from 'react';
-import TBody from './TBody/TBody';
+import TBody, { IData } from './TBody/TBody';
 import THead from './THead/THead';
 import './Table.scss';
-import users from '../../../public/data/users.json';
 import titles from '../../../public/data/columnsNames';
 import TRow from './TRow/TRow';
 
-const Table = () => {
+interface IUsers {
+  users: IData[];
+}
+
+const Table = ({ users }: IUsers) => {
   return (
     <table className="table">
       <THead theadData={titles} />
