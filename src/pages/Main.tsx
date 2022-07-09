@@ -21,26 +21,28 @@ const Main = () => {
   };
 
   return (
-    <div className='table'>
-      <Table users={currentPosts} />
-      <Pagination
-        count={users.length}
-        onClick={togglePage}
-        cardsPerPage={cardsAmount}
-        currentPage={currentPage}
-      />
-      <Select
-        defaultValue={cardsAmount}
-        options={[
-          { value: 5, name: '5' },
-          { value: 10, name: '10' },
-          { value: 15, name: '15' },
-          { value: 25, name: '25' },
-          { value: 50, name: '50' },
-        ]}
-        onChange={(e) => dispatch(changeCardsCount(Number(e.target.value)))}
-      />
-    </div>
+    <main>
+      <div className='_container'>
+        <Select
+          defaultValue={cardsAmount}
+          options={[
+            { value: 5, name: '5' },
+            { value: 10, name: '10' },
+            { value: 15, name: '15' },
+            { value: 25, name: '25' },
+            { value: 50, name: '50' },
+          ]}
+          onChange={(e) => dispatch(changeCardsCount(Number(e.target.value)))}
+        />
+        <Table users={currentPosts} />
+        <Pagination
+          count={users.length}
+          onClick={togglePage}
+          cardsPerPage={cardsAmount}
+          currentPage={currentPage}
+        />
+      </div>
+    </main>
   );
 };
 

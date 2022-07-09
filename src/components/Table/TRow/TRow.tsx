@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import { getCurrentDate } from '../../../utils/getCurrentDate';
 import { getNameInFormat } from '../../../utils/getNameInFormat';
 import { getStatus } from '../../../utils/getStatus';
-import { IData } from '../Table';
+import { IData } from '../../../models/Data';
+import { useNavigate } from 'react-router-dom';
 
 const TRow: FC<IData> = ({
   account,
@@ -13,8 +14,14 @@ const TRow: FC<IData> = ({
   status,
   terminal,
 }) => {
+  const navigate = useNavigate();
+
+  const handleChangePage = (id: number) => {
+    navigate(`main/${id}`);
+  };
+
   return (
-    <tr className='table__row'>
+    <tr className='table__row' onClick={() => handleChangePage(id)}>
       <td>
         <span>{`№${id}`}</span>
         <span>{getCurrentDate(created_date)}</span>
