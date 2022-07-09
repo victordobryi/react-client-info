@@ -2,20 +2,19 @@ import React, { FC } from 'react';
 import { getCurrentDate } from '../../../utils/getCurrentDate';
 import { getNameInFormat } from '../../../utils/getNameInFormat';
 import { getStatus } from '../../../utils/getStatus';
-import { IData } from '../TBody/TBody';
+import { IData } from '../Table';
 
 const TRow: FC<IData> = ({
   account,
   created_date,
   created_user,
   id,
-  oguid,
   order_type,
   status,
-  terminal
+  terminal,
 }) => {
   return (
-    <tr className="table__row">
+    <tr className='table__row'>
       <td>
         <span>{`№${id}`}</span>
         <span>{getCurrentDate(created_date)}</span>
