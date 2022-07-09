@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
-import Main from './pages/Main';
+import AppRouter from './router/AppRouter';
 
 import './styles/main.scss';
 
 export const App = () => (
   <Fragment>
-    <header className="header"></header>
-    <main className="main">
-      <Main />
-    </main>
-    <footer className="footer"></footer>
+    <header className='header'></header>
+    <AppRouter />
+    <footer className='footer'></footer>
   </Fragment>
 );
 

@@ -1,6 +1,7 @@
 .table {
   text-align: center;
   font-size: 17px;
+  cursor: pointer;
   &__head {
     display: grid;
     grid-template-columns: 20% 30% 40% 10%;
