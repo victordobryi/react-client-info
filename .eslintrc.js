@@ -2,12 +2,12 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   extends: [
     'plugin:react/recommended',
@@ -18,8 +18,6 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
     'plugin:eslint-comments/recommended',
-    'prettier',
-    'plugin:prettier/recommended'
   ],
   rules: {
     'no-unused-vars': 'off',
@@ -30,12 +28,8 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto'
-      }
-    ],
     '@typescript-eslint/no-unused-vars': ['warn'],
-  }
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+  },
 };

@@ -1,13 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const PrettierPlugin = require('prettier-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
@@ -16,32 +15,27 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader'
-          }
-        ]
+            loader: 'babel-loader',
+          },
+        ],
       },
       {
         test: /\.(s[ac]|c)ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[hash][ext][query]'
-        }
+          filename: 'img/[hash][ext][query]',
+        },
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[hash][ext][query]'
-        }
+          filename: 'fonts/[hash][ext][query]',
+        },
       },
       {
         test: /\.mp3$/,
@@ -50,37 +44,26 @@ module.exports = {
           options: {
             name: '[name].[contenthash].[ext]',
             outputPath: 'audio/',
-            publicPath: 'audio/'
-          }
-        }
-      }
-    ]
+            publicPath: 'audio/',
+          },
+        },
+      },
+    ],
   },
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
     assetModuleFilename: 'assets/[hash][ext]',
-    publicPath: '/'
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/index.html'),
-      favicon: './public/favicon.jpg'
+      favicon: './public/favicon.jpg',
     }),
     new ESLintPlugin({
-      extensions: ['js', 'jsx', 'ts', 'tsx']
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new MiniCssExtractPlugin(),
-    new PrettierPlugin({
-      printWidth: 80,
-      tabWidth: 2,
-      useTabs: false,
-      semi: true,
-      singleQuote: true,
-      trailingComma: 'none',
-      encoding: 'utf-8',
-      extensions: ['.js', '.ts', 'jsx', 'tsx'],
-      endOfLine: 'auto'
-    })
-  ]
+  ],
 };

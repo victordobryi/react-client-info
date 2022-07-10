@@ -1,11 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import AppRouter from './router/AppRouter';
 
 import './styles/main.scss';
 
 export const App = () => (
-  <Fragment>
-    <h1>React TypeScript Webpack Starter Template</h1>
-  </Fragment>
+  <div className='app'>
+    <header className='header'></header>
+    <AppRouter />
+    <footer className='footer'></footer>
+  </div>
 );
 
 export default App;
