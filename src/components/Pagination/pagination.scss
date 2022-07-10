@@ -1,7 +1,19 @@
 .pagination {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   &__item {
     border-radius: 50%;
+    &.active {
+      border: 2px solid red;
+    }
+  }
+  &__nav {
+    user-select: none;
+  }
+  &__item,
+  &__nav {
     border: 1px solid black;
     width: 30px;
     height: 30px;
@@ -10,8 +22,16 @@
     justify-content: center;
     margin: 5px;
     cursor: pointer;
-    &.active {
-      border: 2px solid red;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .pagination {
+    font-size: 12px;
+    &__item,
+    &__nav {
+      width: 15px;
+      height: 15px;
     }
   }
 }
