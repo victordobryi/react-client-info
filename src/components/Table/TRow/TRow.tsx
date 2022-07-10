@@ -34,7 +34,9 @@ const TRow: FC<IData> = ({
         <span>{account.name}</span>
         <span>{terminal.name}</span>
       </td>
-      <td>{getStatus(status)}</td>
+      <td>
+        <p style={{ backgroundColor: getStatus(status).color }}>{getStatus(status).status}</p>
+      </td>
     </tr>
   );
 };
