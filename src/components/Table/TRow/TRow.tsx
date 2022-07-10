@@ -35,7 +35,9 @@ const TRow: FC<IData> = ({
         <span>{terminal.name}</span>
       </td>
       <td>
-        <p style={{ backgroundColor: getStatus(status).color }}>{getStatus(status).status}</p>
+        <span className='table__row-status' style={{ backgroundColor: getStatus(status).color }}>
+          {getStatus(status).status}
+        </span>
       </td>
     </tr>
   );
