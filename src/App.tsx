@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import AppRouter from './router/AppRouter';
 
 import './styles/main.scss';
 
 export const App = () => (
-  <Fragment>
+  <div className='app'>
     <header className='header'></header>
     <AppRouter />
     <footer className='footer'></footer>
-  </Fragment>
+  </div>
 );
 
 export default App;

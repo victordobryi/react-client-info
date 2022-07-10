@@ -32,9 +32,14 @@ const Main = () => {
             { value: 25, name: '25' },
             { value: 50, name: '50' },
           ]}
-          onChange={(e) => dispatch(changeCardsCount(Number(e.target.value)))}
+          onChange={(e) => {
+            dispatch(changeCardsCount(Number(e.target.value)));
+            togglePage(1);
+          }}
         />
-        <Table users={currentPosts} />
+        <div className='table__wrapper'>
+          <Table users={currentPosts} />
+        </div>
         <Pagination
           count={users.length}
           onClick={togglePage}

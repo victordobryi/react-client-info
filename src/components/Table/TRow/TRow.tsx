@@ -31,8 +31,8 @@ const TRow: FC<IData> = ({
         <span>{getNameInFormat(created_user)}</span>
       </td>
       <td>
-        <span>{account?.name}</span>
-        <span>{terminal?.name}</span>
+        <span>{account.name}</span>
+        <span>{terminal.name}</span>
       </td>
       <td>{getStatus(status)}</td>
     </tr>
